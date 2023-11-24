@@ -1,0 +1,8 @@
+version: '3'
+services:
+  mongos:
+    container_name: mongos
+    image: mongo
+    command: mongos --configdb cfgrs/localhost:10001,localhost:10002,localhost:10003 --bind_ip 0.0.0.0 --port 27017
+    ports:
+      - 30000:27017
